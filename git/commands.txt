@@ -9,3 +9,7 @@ git branch命令会列出所有分支，当前分支前面会标一个*号。
 创建+切换分支：git checkout -b name
 合并某分支到当前分支：git merge name
 删除分支：git branch -d name
+
+
+要查看远程库的信息 git remote -v
+git push origin dev #推送其他分支，比如dev
