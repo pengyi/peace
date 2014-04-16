@@ -12,3 +12,5 @@ if [ $guess -eq 99 ]; then
 else
     echo 'just so so'
 fi
+
+exit
