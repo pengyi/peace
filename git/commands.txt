@@ -13,3 +13,6 @@ git branch命令会列出所有分支，当前分支前面会标一个*号。
 
 要查看远程库的信息 git remote -v
 git push origin dev #推送其他分支，比如dev
+
+how to write 
+https://help.github.com/articles/github-flavored-markdown
