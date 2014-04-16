@@ -1,5 +1,5 @@
 #!/bin/bash
-#comment or #    comment
+#comment or #    commasdent
 
 var="a string variable"   #   define a variable
 echo $var #   use a varibale
