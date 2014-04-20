@@ -1,0 +1,8 @@
+Extensions can interact with web pages or servers using content scripts or cross-origin XMLHttpRequests.
+Extensions can also interact programmatically with browser features such as bookmarks and tabs.
+Many extensions have a background page, an invisible page that holds the main logic of the extension
+If an extension needs to interact with web pages that the user loads, then the extension must use a content script.
+
+There are two types of background pages: persistent background pages, and event pages.
+Persistent background pages, as the name suggests, are always open. Event pages are opened and closed as needed.
+Unless you absolutely need your background page to run all the time, prefer to use an event page.

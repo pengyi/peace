@@ -1,0 +1,18 @@
+{
+    //required
+    "manifest_version": 2,
+    "name": "Auto Fill",
+    "version": "1.0.0",
+    //Recommended
+    "description" : "auto fill form",
+    "page_action" : {
+        "default_title" : "fill"
+    },
+    "content_scripts": [
+       {
+        "matches": ["http://www.ganji.com/*", "http://*.apollo.corp.ganji.com/*"],
+        "js": ["jq.js", "af.js"],
+        "all_frames": true
+       }
+    ]
+}
