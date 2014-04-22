@@ -1,0 +1,36 @@
+
+GCC 编译选项
+
+部分编译
+
+默认的 $ gcc 是一下子完成上面的四步，me 们可以通过编译选项控制只完成前面的步骤： -E -S -c 分别只进行第一步、第二步和第三步的操作。
+
+$ gcc -E hello.c    # 只进行预处理，也就是完成第一步；
+$ gcc -S hello.c/hello.i    # 完成第二步编译，生成 .s 汇编文件；
+$ gcc -c hello.c/hello.i/hello.s    # 完成第三步汇编，生成 .o 目标文件；
+$ gcc hello.c/hello.i/hello.s/hello.o    # 默认生成可执行文件 a.out；
+其他编译选项：
+
+-o filename ：指定生成文件的名字，比如 -o hello 、-o hello.i 等；
+-D macro_name=value ：设定预处理的宏，比如 -D NDEBUG = 3， =value 部分可有可无(也就是 =3 不是必需的)；
+-Idir ：指定不在标准或是系统搜索路径中的 include 文件路径；-Idir 可以覆盖系统标准目录，也就是 -Idir 的优先级别高于系统目录；
+-Ldir ：指定不在标准或是系统搜索路径中的 lib 文件路径；
+-l library ：指定链接的库，比如 -l pthread 线程库；-l 和 library 之间的空格可以省略，比如 -lpthread ；
+-Wall ：显示所有的警告；
+-O2 ：二级优化，可以让程序跑得更快，but 可能调试不方便；
+-std=标准 ：指定语言标准，比如 c++11、gnu99 等；
+-framework name[,suffix]
+             This option tells the linker to search for `name.frame-
+             work/name' the framework search path.  If the optional suffix
+             is specified the framework is first searched for the name
+             with the suffix and then without (e.g. look for `name.frame-
+             work/name_suffix' first, if not there try `name.frame-
+             work/name').
+             
+
+-framework name[,suffix]
+   Specifies a framework to link against. Frameworks are dynamic shared libraries, but they are stored in different locations, and therefore must be searched for differently.
+ When this option is specified, ld searches for framework `name.framework/name' first in any directories specified with the -F option, then in the standard framework directories /Library/Frameworks, /Network/Library/Frameworks, and /System/Library/Frameworks. The placement of the -framework option is significant, as it determines when and how the framework is searched. If the optional suffix is specified the framework is first searched for the name with the suffix and then without.
+
+  -Ldir
+   Add dir to the list of directories in which to search for libraries. Directories specified with -L are searched before the standard directories.

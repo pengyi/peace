@@ -7,5 +7,6 @@ add.o : add.h
 minus.o : minus.h
 .PHONY : clean
 #comment
+#include filename
 clean :
 	-rm t $(objects)

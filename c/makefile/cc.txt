@@ -1,0 +1,41 @@
+Stage Selection Options
+       -E  Run the preprocessor stage.
+
+       -fsyntax-only
+           Run the preprocessor, parser and type checking stages.
+
+       -S  Run the previous stages as well as LLVM generation and optimization stages and target-specific code generation, producing an assembly file.
+
+       -c  Run all of the above, plus the assembler, generating a target ".o" object file.
+
+       no stage selection option
+           If no stage selection option is specified, all stages above are run, and the linker is run to combine the results into an executable or shared library.
+
+       --analyze
+           Run the Clang Static Analyzer.
+
+
+Preprocessor Options
+       -Dmacroname=value
+           Adds an implicit #define into the predefines buffer which is read before the source file is preprocessed.
+
+       -Umacroname
+           Adds an implicit #undef into the predefines buffer which is read before the source file is preprocessed.
+
+       -include filename
+           Adds an implicit #include into the predefines buffer which is read before the source file is preprocessed.
+
+       -Idirectory
+           Add the specified directory to the search path for include files.
+
+       -Fdirectory
+           Add the specified directory to the search path for framework include files.
+
+       -nostdinc
+           Do not search the standard system directories or compiler builtin directories for include files.
+
+       -nostdlibinc
+           Do not search the standard system directories for include files, but do search compiler builtin include directories.
+
+       -nobuiltininc
+           Do not search clang's builtin directory for include files.
