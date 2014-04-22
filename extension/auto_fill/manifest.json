@@ -10,7 +10,7 @@
     },
     "content_scripts": [
        {
-        "matches": ["http://www.ganji.com/*", "http://*.apollo.corp.ganji.com/*"],
+        "matches": ["http://*.apollo.corp.ganji.com/*"],
         "js": ["jq.js", "af.js"],
         "all_frames": true
        }

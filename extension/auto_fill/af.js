@@ -1,21 +1,36 @@
 
-var dev    = localStorage['devconfirm'];
-var test   = localStorage['test'];
-var viewer = localStorage['viewer'];
 
-$('#devconfirm').val(dev);
-$('#test').val(test);
-$('#reviewboard_user').val(viewer);
+var fillInputs = function() {
+    var $inputs = $('input[type=text]');
+    $inputs.each(function(index, item) {
+        var $input = $(item);
+        var name   = $input.attr('name');
+        var oldVal = $input.val();
+        if (name !== undefined) {
+            var savedVal = localStorage[name];
+            if (savedVal) {
+                 $input.val(savedVal);
+            }
+        }
+   });
+}
 
-$('#rwsubmit').on('click', function() {
-if($('#devconfirm').length > 0) {
-    localStorage['devconfirm'] = $('#devconfirm').val();
-}
-if($('#test').length > 0) {
-   localStorage['test'] = $('#test').val();
+
+var saveValue = function() {
+    var $inputs = $('input[type=text]');
+    $inputs.each(function(index, item) {
+        var $input = $(item);
+        var name   = $input.attr('name');
+        if (name !== undefined) {
+            $input.on('blur', function() {
+                var val = $input.val();
+                if (val) {
+                    localStorage[name] = val;
+                }
+            });
+        }
+    });
 }
 
-if ($('#reviewboard_user').length > 0) {
-   localStorage['viewer'] = $('#reviewboard_user').val(); 
-}
-});
+saveValue();
+fillInputs();
